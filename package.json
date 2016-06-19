@@ -1,0 +1,14 @@
+{
+  "name": "blncd",
+  "version": "1.0.0",
+  "description": "blncd js client for command line",
+  "main": "blncd.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kwang kim",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.72.0"
+  }
+}
