@@ -1,8 +1,9 @@
 {
   "name": "blncd",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "blncd js client for command line",
   "main": "blncd.js",
+  "bin": "./blncd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

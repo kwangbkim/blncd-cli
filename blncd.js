@@ -1,7 +1,10 @@
+#!/usr/bin/env node
+
 var request = require('request');
 var readline = require('readline');
 
-var ask = process.argv.slice(2).join(' ');
+var commandStart = process.argv[0] == 'node' ? 2 : 1;
+var ask = process.argv.slice(commandStart).join(' ');
 var apiKey = process.env.BLNCD_API_KEY;
 if (!apiKey)
 	console.log("\nCan't find an api key, let's get you set up!");
@@ -64,7 +67,7 @@ if (ask == 'create' || !apiKey) {
 	console.log("blncd done nodejs book")
 	newline();
 
-	console.log("* The first word in each task is noted as the tasks 'type'.  You can get all tasks of the same type by specifying it after 'get'.  You can complete multiple tasks at the same time using the 'finish[ed]' keyword.");
+	console.log("* The first word in each task is noted as the task's 'type'.  You can get all tasks of the same type by specifying it after 'get'.  You can complete multiple tasks at the same time using the 'finish[ed]' keyword.");
 	console.log("blncd add buy apples");
 	console.log("blncd add buy oranges");
 	console.log("blncd add buy toothpaste");
