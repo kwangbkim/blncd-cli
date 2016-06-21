@@ -9,7 +9,9 @@ var apiKey = process.env.BLNCD_API_KEY;
 if (!apiKey)
 	console.log("\nCan't find an api key, let's get you set up!");
 
-if (ask == 'create' || !apiKey) {
+if (!ask || ask == 'help') {
+	printHelp();
+} else if (ask == 'create' || !apiKey) {
 	const rl = readline.createInterface({
 		input: process.stdin,
 		output: process.stdout
@@ -48,37 +50,6 @@ if (ask == 'create' || !apiKey) {
 			rl.close();
 		});
 	});
-} else if (ask == 'help') {
-	newline();
-	console.log("* Get the current list of tasks.");
-	console.log("blncd get");
-
-	newline();
-	console.log("* Here's how to add stuff.  Keywords [add | new] will both work.");
-	console.log("blncd add buy medicine is important & urgent 1");
-	console.log("blncd add read a nodejs book is important but not urgent 2");
-	console.log("blncd add pickup laundry is not important & urgent 3");
-	console.log("blncd add buy a basketball is not important & not urgent 4");
-	console.log("blncd add not specifying a priority defaults to not important & not urgent");
-	newline();
-
-	console.log("* Here's how to mark something done.  Blncd will do a fuzzy match to find the most appropriate item you're referring to.  Keywords [done | complete | delete] will all work.");
-	console.log("blncd done medicine");
-	console.log("blncd done nodejs book")
-	newline();
-
-	console.log("* The first word in each task is noted as the task's 'type'.  You can get all tasks of the same type by specifying it after 'get'.  You can complete multiple tasks at the same time using the 'finish[ed]' keyword.");
-	console.log("blncd add buy apples");
-	console.log("blncd add buy oranges");
-	console.log("blncd add buy toothpaste");
-	console.log("blncd add buy cereal");
-	console.log("blncd get buy");
-	console.log("blncd finish buy");
-	newline();
-
-	console.log("* Mail yourself the task list.  Keywords [send | mail | email] will all work.");
-	console.log("blncd mail");
-	newline();
 } else {
 	callBlncd(apiKey, ask, function(err, res) {
 		if (err) console.log(err);
@@ -151,4 +122,37 @@ function callBlncd(key, ask, callback) {
 	request(options, function(err, res, body) {
 		callback(err, res);
 	});
+}
+
+function printHelp() {
+	newline();
+	console.log("* Get the current list of tasks.");
+	console.log("blncd get");
+
+	newline();
+	console.log("* Here's how to add stuff.  Keywords [add | new] will both work.");
+	console.log("blncd add buy medicine is important & urgent 1");
+	console.log("blncd add read a nodejs book is important but not urgent 2");
+	console.log("blncd add pickup laundry is not important & urgent 3");
+	console.log("blncd add buy a basketball is not important & not urgent 4");
+	console.log("blncd add not specifying a priority defaults to not important & not urgent");
+	newline();
+
+	console.log("* Here's how to mark something done.  Blncd will do a fuzzy match to find the most appropriate item you're referring to.  Keywords [done | complete | delete] will all work.");
+	console.log("blncd done medicine");
+	console.log("blncd done nodejs book")
+	newline();
+
+	console.log("* The first word in each task is noted as the task's 'type'.  You can get all tasks of the same type by specifying it after 'get'.  You can complete multiple tasks at the same time using the 'finish[ed]' keyword.");
+	console.log("blncd add buy apples");
+	console.log("blncd add buy oranges");
+	console.log("blncd add buy toothpaste");
+	console.log("blncd add buy cereal");
+	console.log("blncd get buy");
+	console.log("blncd finish buy");
+	newline();
+
+	console.log("* Mail yourself the task list.  Keywords [send | mail | email] will all work.");
+	console.log("blncd mail");
+	newline();
 }
