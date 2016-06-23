@@ -3,7 +3,7 @@
 var request = require('request');
 var readline = require('readline');
 
-var commandStart = process.argv[0] == 'node' ? 2 : 1;
+var commandStart = process.argv[0] == 'node' ? 3 : 2;
 var ask = process.argv.slice(commandStart).join(' ');
 var apiKey = process.env.BLNCD_API_KEY;
 if (!apiKey)
