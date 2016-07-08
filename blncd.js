@@ -83,13 +83,13 @@ if (!ask || ask == 'help') {
 
 function printQuadrant(quadrant) {
 	if (quadrant == 1)
-		console.log("-------- Important & Urgent --------");
+		console.log("- Important & Urgent -");
 	if (quadrant == 2)
-		console.log("-------- Important & Not Urgent --------");
+		console.log("- Important & Not Urgent -");
 	if (quadrant == 3)
-		console.log("-------- Not Important & Urgent --------");
+		console.log("- Not Important & Urgent -");
 	if (quadrant == 4)
-		console.log("-------- Not Imporant & Not Urgent --------");
+		console.log("- Not Imporant & Not Urgent -");
 }
 
 function printTasks(tasks) {
