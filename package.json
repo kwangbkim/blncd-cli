@@ -7,9 +7,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "kwang kim",
-  "license": "ISC",
+  "author": "kwang kim <bkwangkim@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "request": "^2.72.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kwangbkim/blncd-cli"
+  },
+  "bugs": {
+    "url": "https://github.com/nodejitsu/browsenpm.org/issues"
   }
 }
