@@ -1,7 +1,7 @@
 {
   "name": "blncd",
-  "version": "1.0.10",
-  "description": "blncd js client for command line",
+  "version": "1.0.11",
+  "description": "Minimal, opinionated task list for developers.",
   "main": "blncd.js",
   "bin": "./blncd.js",
   "scripts": {
