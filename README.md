@@ -4,6 +4,9 @@ Home page: [http://blncd.io](http://blncd.io)
 
 A minimal, opinionated task list for developers.  Based on Stephen Covey's quadrant based time management grid.  Command line interface.  Use your email app/client/website for on the go access.
 
+This project is a thin js client for the terminal to access the blncd application.
+The server has a different repository located at: [https://github.com/kwangbkim/blncd](https://github.com/kwangbkim/blncd)
+
 ## Demo
 *Command Line*  
 ![blncd](http://blncd.io/assets/blncd-demo.gif)
