@@ -1,6 +1,6 @@
 {
   "name": "blncd",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "blncd js client for command line",
   "main": "blncd.js",
   "bin": "./blncd.js",
