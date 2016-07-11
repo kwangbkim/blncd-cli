@@ -9,9 +9,7 @@ var apiKey = process.env.BLNCD_API_KEY;
 if (!apiKey)
 	console.log("\nCan't find an api key, let's get you set up!");
 
-if (!ask || ask == 'help') {
-	printHelp();
-} else if (ask == 'create' || !apiKey) {
+if (ask == 'create' || !apiKey) {
 	const rl = readline.createInterface({
 		input: process.stdin,
 		output: process.stdout
@@ -50,6 +48,8 @@ if (!ask || ask == 'help') {
 			rl.close();
 		});
 	});
+} else if (!ask || ask == 'help') {
+	printHelp();
 } else {
 	callBlncd(apiKey, ask, function(err, res) {
 		if (err) console.log(err);
