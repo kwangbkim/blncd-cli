@@ -54,29 +54,33 @@ if (ask == 'create' || !apiKey) {
 	callBlncd(apiKey, ask, function(err, res) {
 		if (err) console.log(err);
 
-		if (ask.indexOf('get') >= 0) {
-			newline();
-			var quadrant;
-			var filter = function(task) {
-				return task.quadrant == quadrant;
-			}
-
-			var tasks = [];
-			for (var i in res.body) {
-				var task = res.body[i];
-				tasks.push(task);
-			}
-
-			for (quadrant = 1; quadrant <= 4; quadrant++) {
-				var t = tasks.filter(filter);
-				if (t.length > 0) {
-					printQuadrant(quadrant);
-					printTasks(t);
-					newline();
+		if (res.statusCode !== 200 && res.statusCode !== 201) {
+			console.log(res.body.error);
+		} else {
+			if (ask.indexOf('get') >= 0) {
+				newline();
+				var quadrant;
+				var filter = function(task) {
+					return task.quadrant == quadrant;
 				}
+
+				var tasks = [];
+				for (var i in res.body) {
+					var task = res.body[i];
+					tasks.push(task);
+				}
+
+				for (quadrant = 1; quadrant <= 4; quadrant++) {
+					var t = tasks.filter(filter);
+					if (t.length > 0) {
+						printQuadrant(quadrant);
+						printTasks(t);
+						newline();
+					}
+				}
+			} else if (!err) {
+				console.log("ok");
 			}
-		} else if (!err) {
-			console.log("ok");
 		}
 	});
 }
