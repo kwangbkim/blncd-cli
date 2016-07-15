@@ -57,7 +57,7 @@ if (ask == 'create' || !apiKey) {
 		if (res.statusCode !== 200 && res.statusCode !== 201) {
 			console.log(res.body.error);
 		} else {
-			if (ask.indexOf('get') >= 0) {
+			if (ask.indexOf('get') >= 0 || ask.indexOf('list') >= 0 || ask.indexOf('ls') >= 0) {
 				newline();
 				var quadrant;
 				var filter = function(task) {

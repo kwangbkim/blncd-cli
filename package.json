@@ -1,6 +1,6 @@
 {
   "name": "blncd",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Minimal, opinionated task list for developers.",
   "main": "blncd.js",
   "bin": "./blncd.js",
