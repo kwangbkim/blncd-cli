@@ -8,11 +8,12 @@ This project is a thin js client for the terminal to access the blncd.io API
 The server has a different repository located at: [https://github.com/kwangbkim/blncd](https://github.com/kwangbkim/blncd)
 
 ## Demo
-*Command Line*  
+
+### Command Line ###
 ![blncd](https://github.com/kwangbkim/blncd/blob/master/public/assets/blncd-demo.gif)
 
-*Email*  
-![blncd](http://blncd.io/assets/email-demo.gif)
+### Email ###
+![blncd](https://github.com/kwangbkim/blncd/blob/master/public/assets/email-demo.gif)
 
 ## Install
 
