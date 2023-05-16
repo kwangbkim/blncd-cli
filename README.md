@@ -9,7 +9,7 @@ The server has a different repository located at: [https://github.com/kwangbkim/
 
 ## Demo
 *Command Line*  
-![blncd](http://blncd.io/assets/blncd-demo.gif)
+![blncd](http://blncd.io/assets/blncd-demo.gif)](https://github.com/kwangbkim/blncd/blob/master/public/assets/blncd-demo.gif)
 
 *Email*  
 ![blncd](http://blncd.io/assets/email-demo.gif)
